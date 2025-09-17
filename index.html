@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <title>Hong Nguyen</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <style>
+        #image {border-radius: 50%; animation: pop_up 2s; width: 100px}
+        .social {border-radius: 50%; width: 50px}
+        body {display: grid; background-image: url("https://wallpapers.com/images/high/electronic-circuit-schematic-background-9sitivru7pj8l99m.webp")}
+        .text1 {overflow-wrap: anywhere; font-weight: bold}
+        .title {overflow: hidden; margin-top: 15%; place-self: center; padding-left: 12px; padding-right: 12px; padding-top: 5px; padding-bottom: 5px; background-color: white; text-align: center; font-size: 43px; height:50px; border-radius: 20px; font-weight: bolder;}
+        .option div {place-self: center; font-size: 13px; font-weight:bold; width: 80%;
+            background-color: white; border-radius:20px; text-align: center; height: 30px; place-content: center;}
+        .option > .remain_opt:hover {text-decoration: underline; cursor: pointer}
+        .option {justify-self: center; height: 30px; display: grid; grid-template-columns: auto auto auto auto; width: 90%;}
+        .content {  transform: translateX(160%); animation: unroll-content 1s forwards 2s}
+        #body_content {display: grid; grid-template-rows: auto 85vh auto;}
+        .horizontal {margin-top: 20px; padding: 12px}
+        .horizontal img {place-self: center}
+        .horizontal .content {place-self: center; padding-left: 12px; padding-right: 12px}
+        #dropbtn {z-index: 2}
+        #dropdown div:hover {text-decoration: underline; cursor: pointer}
+        #dropdown div {width: 100%}
+         #myDropdown {background: lightgrey; opacity: 0; font-size: 10px }
+         #myDropdown:hover {background: grey}
+         #footer {place-items: center;}
+        #footer div {display: grid; grid-template-columns: 100px 100px 100px; }
+            #the_middle img {place-self: center}
+        @media (min-width: 700px)
+        {
+            .title {width: 37%}
+            .horizontal {
+                height: 140px;
+                width: 50%;
+                place-self: center;
+                overflow: hidden;
+                position: relative;
+                background-color: white;
+                border-radius: 20px;
+                display: grid;
+                grid-template-columns: 120px 1fr
+
+            }
+
+        }
+        @media (max-width: 700px) {
+            .title {width: 52%}
+            .horizontal {
+                height: 240px;
+                padding-bottom: 0;
+
+                width: 50%;
+                place-self: center;
+                 overflow: hidden;
+                position: relative;
+                background-color: white;
+                border-radius: 20px;
+                display: grid;
+                grid-template-rows: 1fr 1fr
+            }
+
+
+
+        }
+        @keyframes dropdisap {
+            from {
+                opacity: 1
+            }
+            to {
+                opacity: 0
+            }
+        }
+        @keyframes drop-down {
+            from {
+
+                opacity: 0
+            }
+            to {
+                opacity: 1
+            }
+        }
+        @keyframes disappear {
+            from {
+
+                transform: scale(1)
+            }
+            to {
+
+                transform: scale(0)
+
+            }
+        }
+        @keyframes pop_up {
+            from {
+                transform: scale(0);
+
+            }
+            to {transform: scale(1);
+            }
+        }
+        @keyframes unroll-content {
+            from {
+                transform: translateX(160%);
+
+            }
+            to {
+                transform: translateX(0);
+
+            }
+        }
+        @keyframes slide_out {
+            from {
+                transform: translateX(0)
+
+            }
+            to {
+                transform: translateX(104%)
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+
+             <div id = "body_content">
+
+
+             <div class = 'option' id = "o1">
+        <div class = "remain_opt" onclick = "myFunction('0')">ABOUT ME</div>
+        <div class = "remain_opt"  onclick = "myFunction('1')">SKILL</div>
+        <div id = "ed" class = "remain_opt" onclick = "myFunction('2')"  >EDUCATION</div>
+        <div id="dropdown">
+  <div id="dropbtn">PROJECT</div>
+  <div id="myDropdown" class="dropdown-content">
+    2048 MUKBANG
+  </div>
+</div>
+    </div>
+
+                 <div id = "body_line">
+            <div class="title"> <div class = "content"> ABOUT ME </div> </div>
+        <div class = "horizontal">
+
+
+            <img src = "me.jpg" id = "image">
+                    <div class = "content">
+                <p class = "text1"> I am Hong, a computer Science student at UCI.
+            I am interested in enhancing more programming skill.
+            And investigating about machine learning.</p>
+
+                </div>
+            </div>
+                </div>
+                 <div id = "footer">
+                     <div id = "the_middle">
+                         <img src = "gmail.png" class = "social">
+                         <img src = "github.png" class = "social">
+                         <img src = "linkedin.jpg" class = "social">
+
+                         </div>
+
+                 </div>
+             </div>
+</body>
+<script>
+    let content = {'2': ["EDUCATION", "University_of_California,_Irvine_seal.svg.png", "<p class = 'text1'>Degree: Bachelor of Science in Computer Science (expected 2028)<br>GPA: 4.0<br>Award: Dean's Honor List<br>Scholarship: Regent's Scholar </p>"],
+                    '1': ["SKILL", "skill.png", " <p class = 'text1'> Language: Python <br> Front-End: HTML, CSS, JavaScript <br>Database: SQLite</p>"],
+                    '0': ["ABOUT ME", "me.jpg", '<p class="text1"> I am Hong, a computer Science student at UCI. I am interested in enhancing more programming skill. And investigating about machine learning.</p>'],
+    }
+
+    function myFunction(id) {
+        let image = document.getElementById("image")
+        image.style.animation = "disappear 0.5s forwards"
+        const list_of_content = document.getElementsByClassName("content")
+
+        image.addEventListener("animationend", () => {
+                image.src = content[id][1]
+                 list_of_content[0].style.animation = "slide_out 0.5s"
+                list_of_content[1].style.animation = "slide_out 0.5s"
+            }, {once: true})
+
+        list_of_content[0].addEventListener("animationend", () => {
+            image.style.animation = "pop_up 2s"
+            list_of_content[0].innerHTML = content[id][0]
+            list_of_content[0].style.animation=  'unroll-content 1s forwards 2s'
+        }, {once: true})
+        list_of_content[1].addEventListener("animationend", () => {
+            list_of_content[1].innerHTML = content[id][2]
+            list_of_content[1].style.animation = 'unroll-content 1s forwards 2s'
+        }, {once: true})
+            list_of_content[1].addEventListener("animationend", () => {console.log(document.getElementsByClassName("horizontal")[0].style.height)})
+    }
+    function drop_down_motion() {
+        document.getElementById("myDropdown").style.animation = "drop-down 0s forwards"
+
+    }
+    function drop_disappear() {
+        document.getElementById("myDropdown").style.animation = "drop_disap 0s forwards"
+
+    }
+    document.getElementById("dropdown").addEventListener("mouseenter", drop_down_motion)
+    document.getElementById("dropdown").addEventListener("mouseleave", drop_disappear)
+
+</script>
+</html>

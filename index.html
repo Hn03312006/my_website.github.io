@@ -8,18 +8,19 @@
     <style>
         #image {border-radius: 50%; animation: pop_up 2s; width: 100px}
         .social {border-radius: 50%; width: 50px}
-        body {overflow: hidden; background-image: url("https://wallpapers.com/images/high/electronic-circuit-schematic-background-9sitivru7pj8l99m.webp")}
+        body {background-image: url("https://wallpapers.com/images/high/electronic-circuit-schematic-background-9sitivru7pj8l99m.webp")}
         .text1 {font-size: 15px; overflow-wrap: anywhere; font-weight: bold}
 
 
         .option {justify-self: center; display: grid; grid-template-columns: auto auto auto auto; width: 90%;}
-        .remain_opt {justify-self: center; display: grid; place-content: center; font-size: 13px; font-weight:bold; width: 20dvw;
+        .remain_opt {justify-self: center; display: grid; place-content: center; font-size: 12px; font-weight:bold; width: 20dvw;
                     background-color: white; border-radius:20px; height: 30px}
-         #dropdown div  {display: grid; place-content: center; font-size: 13px; font-weight:bold; width: 20dvw;
-            background-color: white; border-radius:20px; height: 30px}
+         #dropbtn  {
+            background-color: white;}
          #dropdown {justify-self: center}
+         #dropdown div {font-weight:bold; display: grid; place-content: center; width: 20dvw; border-radius:20px; height: 30px}
            #dropdown div:hover {text-decoration: underline; cursor: pointer}
-         #myDropdown {background: lightgrey; opacity: 0; font-size: 10px }
+         #myDropdown {background: lightgrey; opacity: 0; }
          #myDropdown:hover {background: grey}
         .option > .remain_opt:hover {text-decoration: underline; cursor: pointer}
 
@@ -28,8 +29,8 @@
 
 
         .content {  transform: translateX(160%); animation: unroll-content 1s forwards 2s}
-        #body_content {display: grid; grid-template-rows: 50px 1fr 80px; min-height:100dvh}
-        .title {margin: 0 auto; overflow: hidden; padding: 7px; background-color: blue; border-radius: 20px}
+        #body_content {display: grid; grid-template-rows: 50px 1fr 40px; min-height:97dvh}
+        .title {margin: 0 auto; overflow: hidden; padding: 7px; background-color: white; border-radius: 20px}
 
            .horizontal img {place-self: center}
         .horizontal .content {place-self: center; padding: 6px}
@@ -55,6 +56,8 @@
 
         @media (min-width: 700px)
         {
+             #dropbtn, .remain_opt { font-size: 13px; }
+             #myDropdown {font-size: 11px}
             .title {
                 width: 37%;
                 font-size: 40px
@@ -66,6 +69,8 @@
 
         }
         @media (max-width: 700px) {
+            #dropbtn, .remain_opt  { font-size: 12px; }
+             #myDropdown {font-size: 10px}
             .title {
                 width: 58%;
                 font-size: 34px

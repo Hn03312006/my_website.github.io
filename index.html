@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang = "en">
 <head>
@@ -10,7 +11,7 @@
         .social {border-radius: 50%; width: 50px}
         body {display: grid; background-image: url("https://wallpapers.com/images/high/electronic-circuit-schematic-background-9sitivru7pj8l99m.webp")}
         .text1 {overflow-wrap: anywhere; font-weight: bold}
-        .title {overflow: hidden; margin-top: 15%; place-self: center; padding-left: 12px; padding-right: 12px; padding-top: 5px; padding-bottom: 5px; background-color: white; text-align: center; font-size: 43px; height:50px; border-radius: 20px; font-weight: bolder;}
+        .title {overflow: hidden; padding: 7px; background-color: white; text-align: center; font-size: 40px; height:50px; border-radius: 20px; font-weight: bolder;}
         .option div {place-self: center; font-size: 13px; font-weight:bold; width: 80%;
             background-color: white; border-radius:20px; text-align: center; height: 30px; place-content: center;}
         .option > .remain_opt:hover {text-decoration: underline; cursor: pointer}
@@ -26,15 +27,16 @@
          #myDropdown {background: lightgrey; opacity: 0; font-size: 10px }
          #myDropdown:hover {background: grey}
          #footer {place-items: center;}
+         #body_line {place-content: center}
         #footer div {display: grid; grid-template-columns: 100px 100px 100px; }
-            #the_middle img {place-self: center}
+            #the_middle a {place-self: center}
+            #body_line {place-items: center}
         @media (min-width: 700px)
         {
             .title {width: 37%}
             .horizontal {
                 height: 140px;
                 width: 50%;
-                place-self: center;
                 overflow: hidden;
                 position: relative;
                 background-color: white;
@@ -52,7 +54,6 @@
                 padding-bottom: 0;
 
                 width: 50%;
-                place-self: center;
                  overflow: hidden;
                 position: relative;
                 background-color: white;
@@ -140,30 +141,29 @@
 </div>
     </div>
 
-                   <div id = "align-center">
-            <div></div>
                  <div id = "body_line">
             <div class="title"> <div class = "content"> ABOUT ME </div> </div>
         <div class = "horizontal">
 
 
-            <img src = "me.jpg" id = "image">
+                    <img src = "me.jpg" id = "image">
                     <div class = "content">
-                <p class = "text1"> I am Hong, a computer Science student at UCI.
-            I am interested in enhancing more programming skill.
-            And investigating about machine learning.</p>
-
+                        <p class = "text1"> I am Hong, a computer Science student at UCI.
+                    I am interested in enhancing more programming skill.
+                    And investigating about machine learning.
+                        </p>
+                    </div>
+        </div>
                 </div>
-            </div>
-                </div>
-                 <div></div>
-                     </div>
                  <div id = "footer">
                      <div id = "the_middle">
-                         <img src = "gmail.png" class = "social">
-                         <img src = "github.png" class = "social">
+                         <a href="mailto:ngocnguyen110816@gmail.com"> <img src = "gmail.png" class = "social">
+                         </a>
+                        <a href="https://github.com/Hn03312006"> <img src = "github.png" class = "social">
+                         </a>
+                           <a href="https://www.linkedin.com/in/hong-nguyen-67a245253">
                          <img src = "linkedin.jpg" class = "social">
-
+                           </a>
                          </div>
 
                  </div>

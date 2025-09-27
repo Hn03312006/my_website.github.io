@@ -364,8 +364,13 @@
     document.getElementById("dropdown").addEventListener("mouseenter", drop_down_motion)
     document.getElementById("dropdown").addEventListener("mouseleave", drop_disappear)
     document.getElementById("dropbtn").addEventListener("click", drop_down_motion)
-    document.getElementById("myDropdown").addEventListener("click", drop_disappear)
-
+    document.addEventListener('click', function(event) {
+        const menuElement = document.getElementById('dropbtn');
+        const isClickOutside = !menuElement.contains(event.target)
+        if (isClickOutside) {
+            drop_disappear()
+        }
+    });
 
 </script>
 </html>

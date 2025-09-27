@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <title>Hong Nguyen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="content_img/me.jpg">
+    <style>
+        #image {
+            border-radius: 50%;
+            animation: pop_up 2s;
+            width: 100px
+        }
+        .social {
+            border-radius: 50%;
+            width: 50px
+        }
+        body {
+            background-image: url("https://wallpapers.com/images/high/electronic-circuit-schematic-background-9sitivru7pj8l99m.webp")
+        }
+        .text1 {
+            display: grid;
+            place-content: center;
+            font-size: 15px;
+            overflow-wrap: anywhere;
+            font-weight: bold
+        }
+        .option {
+            justify-self: center;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            width: 90%
+        }
+        .remain_opt {
+            justify-self: center;
+            display: grid;
+            place-content: center;
+            font-size: 12px;
+            font-weight:bold;
+            width: 20dvw;
+            background-color: white;
+            border-radius:20px;
+            height: 30px
+        }
+        #dropbtn {
+            background-color: white;
+        }
+        #dropdown {
+            justify-self: center
+        }
+        #dropdown div {
+            font-weight:bold;
+            display: grid;
+            place-content: center;
+            width: 20dvw;
+            border-radius:20px;
+            height: 30px
+        }
+        #dropdown div:hover {
+            text-decoration: underline;
+            cursor: pointer
+        }
+        #myDropdown {
+            background: lightgrey;
+            opacity: 0;
+        }
+        #myDropdown:hover {
+            background: grey
+        }
+        .option > .remain_opt:hover {
+            text-decoration: underline;
+            cursor: pointer
+        }
+        .content {
+            transform: translateX(160%);
+            animation: unroll-content 1s forwards 2s
+        }
+        #body_content {
+            display: grid;
+            grid-template-rows: 50px 1fr 70px;
+            min-height:97dvh
+        }
+        .title {
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 7px;
+            background-color: white;
+            border-radius: 20px
+        }
+
+        .horizontal img {
+            place-self: center
+        }
+        .horizontal .content {
+            display: grid;
+            place-content: center;
+            place-self: center;
+            padding: 6px
+        }
+        #title_content {
+            display:grid;
+            width: 100%;
+            height: 100%;
+            place-content: center;
+            font-weight: bolder
+        }
+        #the_middle {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 30px;
+        }
+        .horizontal {
+            padding: 12px;
+            width: 50%;
+            margin: 0 auto;
+            margin-top: 12px;
+            overflow: hidden;
+            background-color: white;
+            border-radius: 20px;
+            display: grid;
+        }
+        #body_line {
+            margin: auto auto;
+            width: 100%;
+        }
+        .no_click {
+            pointer-events: none
+        }
+        @media (min-width: 700px) {
+            #dropbtn, .remain_opt {
+                font-size: 13px;
+            }
+            #myDropdown {
+                font-size: 11px
+            }
+            .title {
+                width: 37%;
+                font-size: 36px
+            }
+            .horizontal {
+                height: 115px;
+                grid-template-columns: 120px 1fr
+            }
+        }
+        @media (max-width: 700px) {
+            #dropbtn, .remain_opt  {
+                font-size: 12px;
+            }
+            #myDropdown {
+                font-size: 10px
+            }
+            .title {
+                width: 58%;
+                font-size: 34px
+            }
+            .horizontal{
+                height: 300px;
+                grid-template-rows: 1fr 1fr
+            }
+        }
+        @keyframes dropdisap {
+            from {
+                opacity: 1
+            }
+            to {
+                opacity: 0
+            }
+        }
+        @keyframes drop-down {
+            from {
+                opacity: 0
+            }
+            to {
+                opacity: 1
+            }
+        }
+        @keyframes disappear {
+            from {
+                transform: scale(1)
+            }
+            to {
+                transform: scale(0)
+            }
+        }
+        @keyframes pop_up {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        @keyframes unroll-content {
+            from {
+                transform: translateX(160%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+        @keyframes slide_out {
+            from {
+                transform: translateX(0)
+            }
+            to {
+                transform: translateX(104%)
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id = "body_content">
+        <div class = 'option' id = "o1">
+            <div class = "remain_opt" onclick = "myFunction('0')">
+                ABOUT ME
+            </div>
+            <div class = "remain_opt"  onclick = "myFunction('1')">
+                SKILL
+            </div>
+            <div id = "ed" class = "remain_opt" onclick = "myFunction('2')">
+                EDUCATION
+            </div>
+            <div id="dropdown">
+                <div id="dropbtn">
+                    PROJECT
+                </div>
+                <div id="myDropdown" class="dropdown-content" onclick = "myFunction('3')">
+                    2048 MUKBANG
+                </div>
+            </div>
+        </div>
+
+        <div id = "body_line">
+            <div class="title">
+                <div class = "content" id = "title_content">
+                    ABOUT ME
+                </div>
+            </div>
+            <div class = "horizontal">
+                <img src = "content_img/me.jpg" id = "image" alt = "Hong_Nguyen">
+                <div class = "content">
+                    <div class = "text1">
+                        I am Hong, a computer Science student at UCI.
+                        I am interested in enhancing more programming skill.
+                        And investigating about machine learning.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id = "the_middle">
+            <a href="mailto:ngocnguyen110816@gmail.com">
+                <img src = "footer_img/gmail.webp" class = "social" alt = "gmail_icon">
+            </a>
+            <a href="https://github.com/Hn03312006">
+                <img src = "footer_img/github.png" class = "social" alt = "github_icon">
+            </a>
+            <a href="https://www.linkedin.com/in/hong-nguyen-67a245253">
+                <img src = "footer_img/linkedin.jpg" class = "social" alt = "linkedin_icon">
+            </a>
+            <a href="hong_resume_2025.pdf" target = "_blank">
+                <img src = "footer_img/resume.png" class = "social" alt = "resume_icon">
+            </a>
+        </div>
+    </div>
+
+
+
+</body>
+
+<script>
+    let content = {
+        '2': [ "EDUCATION", "content_img/UCI.png", "<p class = 'text1'>- Degree: B.S. in Computer " +
+        "Science (expected 2028)<br>- GPA: 4.0<br>- Award: Dean's Honor List<br>- Scholarship: " +
+        "Regent's Scholar </p>"],
+
+        '1': ["SKILL", "content_img/skill1.png", " <p class = 'text1'>- Language: Python, SQL<br>" +
+        "- Front-End: Proficient in creating UI with HTML, CSS, and JavaScript</p>"],
+
+        '0': ["ABOUT ME", "content_img/me.jpg", '<p class="text1">I am Hong, a Computer Science ' +
+        'student at UCI, dedicated to advancing my programming knowledge and developing impactful ' +
+        'applications.</p>'],
+
+        '3': ["THEMED 2048", 'content_img/2048.png', '<p class="text1" style = "display: inline">20' +
+        '48 Mukbang features themed illustration, built with Vanilla HTML, CSS, ' +
+        'and JavaScript. Check out the ' +
+        '<a href = "https://github.com/Hn03312006/2048Mukbang.github.io">sources code</a> or ' +
+        'try the <a href = "https://hn03312006.github.io/2048Mukbang.github.io/">live ' +
+        'site</a> here</p>']
+    }
+    document.getElementById("o1").classList.add("no_click")
+    let initial_enable = 0
+    let slide_in = document.getElementsByClassName("content")
+    document.getElementById("image").addEventListener("animationend", () => {
+         initial_enable ++
+         if (initial_enable === 3) {
+             document.getElementById("o1").classList.remove("no_click")
+         }
+    })
+    slide_in[0].addEventListener("animationend", () => {
+         initial_enable ++
+         if (initial_enable === 3) {
+             document.getElementById("o1").classList.remove("no_click")
+         }
+    })
+    slide_in[1].addEventListener("animationend", () => {
+         initial_enable ++
+         if (initial_enable === 3) {
+             document.getElementById("o1").classList.remove("no_click")
+         }
+    })
+
+
+    function myFunction(id) {
+        let enable = 0
+        document.getElementById("o1").classList.add("no_click")
+        let image = document.getElementById("image")
+        image.style.animation = "disappear 0.5s forwards"
+        const list_of_content = document.getElementsByClassName("content")
+        image.addEventListener("animationend", () => {
+            image.src = content[id][1]
+            list_of_content[0].style.animation = "slide_out 0.5s"
+            list_of_content[1].style.animation = "slide_out 0.5s"
+        }, {once: true})
+        list_of_content[0].addEventListener("animationend", () => {
+            image.style.animation = "pop_up 2s"
+            list_of_content[0].innerHTML = content[id][0]
+            list_of_content[0].addEventListener("animationend", (event) => {
+                if (event.animationName === "unroll-content") {
+                    enable ++
+                    if (enable === 2) {
+                        document.getElementById("o1").classList.remove("no_click")
+                    }
+                }
+            })
+            list_of_content[0].style.animation=  'unroll-content 1s forwards 2s'
+        }, {once: true})
+        list_of_content[1].addEventListener("animationend", () => {
+            list_of_content[1].innerHTML = content[id][2]
+            list_of_content[1].addEventListener("animationend", (event) => {
+                if (event.animationName === "unroll-content") {
+                    enable ++
+                    if (enable === 2) {
+                        document.getElementById("o1").classList.remove("no_click")
+                    }
+                }
+            })
+            list_of_content[1].style.animation = 'unroll-content 1s forwards 2s'
+        }, {once: true})
+    }
+
+
+    function drop_down_motion() {
+        document.getElementById("myDropdown").style.animation = "drop-down 0s forwards"
+    }
+
+
+    function drop_disappear() {
+        document.getElementById("myDropdown").style.animation = "drop_disap 0s forwards"
+    }
+
+
+    document.getElementById("dropdown").addEventListener("mouseenter", drop_down_motion)
+    document.getElementById("dropdown").addEventListener("mouseleave", drop_disappear)
+    document.getElementById("dropbtn").addEventListener("click", drop_down_motion)
+
+
+</script>
+</html>
